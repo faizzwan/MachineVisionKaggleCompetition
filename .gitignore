@@ -1,0 +1,9 @@
+.venv/
+runtime/
+__pycache__/
+*.pyc
+results/runtime_gemma/
+.pytest_cache/
+# vendored Streamlit agent skill docs (third-party, not part of the project)
+.agents/
+.claude/skills/

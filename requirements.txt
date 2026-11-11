@@ -1,0 +1,10 @@
+py_trees>=2.2
+numpy
+pillow
+requests
+pytest
+# operator dashboard
+streamlit>=1.40
+pandas
+# optional, only for --webcam
+# opencv-python

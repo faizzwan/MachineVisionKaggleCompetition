@@ -1,0 +1,251 @@
+{
+  "summary": {
+    "model": "gemma3:4b",
+    "ollama_version": "0.40.16",
+    "machine": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel / Windows 11",
+    "timeout_s_per_closeup": 600.0,
+    "parts_run": [
+      "missing_screw_01",
+      "crack_01",
+      "good_01"
+    ],
+    "warm_up_seconds": 66.3,
+    "total_minutes": 27.0,
+    "model_calls": 16,
+    "seconds_per_call_median": 138.21,
+    "seconds_per_call_min": 11.8,
+    "seconds_per_call_max": 238.46
+  },
+  "parts": [
+    {
+      "image": "crack_01.png",
+      "expected": "REJECT (surface center)",
+      "decision": "REJECT",
+      "reason": "surface damage at surface top: AI saw \"The metal plate surface exhibits several fine lines and scratches, indicating wear and use on a manufacturing line.\"",
+      "decided_by": "ai+rules",
+      "ai_seconds": 930.86,
+      "regions": [
+        {
+          "region": "screw top-left",
+          "answer": "SCREW",
+          "description": "I see a gray metal plate with a white plus sign (+) symbol representing a screw head installed in a circular hole."
+        },
+        {
+          "region": "screw top-right",
+          "answer": "SCREW",
+          "description": "I see a gray metal plate with a black plus sign (+) symbol representing a screw head positioned in a circular recess."
+        },
+        {
+          "region": "screw bottom-left",
+          "answer": "SCREW",
+          "description": "I see a gray, circular button with a black plus sign (+) inside, likely representing a screw hole."
+        },
+        {
+          "region": "screw bottom-right",
+          "answer": "SCREW",
+          "description": "I see a gray metal plate with a black plus sign (+) symbol representing a screw head installed in a circular hole."
+        },
+        {
+          "region": "surface top",
+          "answer": "DAMAGED",
+          "description": "The metal plate surface exhibits several fine lines and scratches, indicating wear and use on a manufacturing line."
+        }
+      ],
+      "raw": {
+        "screw top-left": "I see a gray metal plate with a white plus sign (+) symbol representing a screw head installed in a circular hole.\n\nANSWER: SCREW   (a screw head is installed)",
+        "screw top-right": "I see a gray metal plate with a black plus sign (+) symbol representing a screw head positioned in a circular recess.\n\nANSWER: SCREW   (a screw head is installed)",
+        "screw bottom-left": "I see a gray, circular button with a black plus sign (+) inside, likely representing a screw hole.\nANSWER: SCREW   (a screw head is installed)",
+        "screw bottom-right": "I see a gray metal plate with a black plus sign (+) symbol representing a screw head installed in a circular hole.\n\nANSWER: SCREW   (a screw head is installed)",
+        "surface top": "The metal plate surface exhibits several fine lines and scratches, indicating wear and use on a manufacturing line.\nANSWER: DAMAGED"
+      }
+    },
+    {
+      "image": "good_01.png",
+      "expected": "PASS",
+      "decision": "PASS",
+      "reason": "all 9 regions checked and OK",
+      "decided_by": "ai+rules",
+      "ai_seconds": 657.65,
+      "regions": [
+        {
+          "region": "screw top-left",
+          "answer": "SCREW",
+          "description": "I see a gray metal plate with a white plus sign (+) symbol representing a screw head positioned in a circular outline."
+        },
+        {
+          "region": "screw top-right",
+          "answer": "SCREW",
+          "description": "I see a gray metal plate with a circular icon featuring a plus sign (+) within a black circle."
+        },
+        {
+          "region": "screw bottom-left",
+          "answer": "SCREW",
+          "description": "I see a gray, circular button with a black plus sign (+) centered within it."
+        },
+        {
+          "region": "screw bottom-right",
+          "answer": "SCREW",
+          "description": "I see a gray metal plate with a black plus sign (+) symbol representing a screw head installed in a circular hole."
+        },
+        {
+          "region": "surface top",
+          "answer": "CLEAN",
+          "description": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks."
+        },
+        {
+          "region": "surface left",
+          "answer": "CLEAN",
+          "description": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks."
+        },
+        {
+          "region": "surface center",
+          "answer": "CLEAN",
+          "description": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks."
+        },
+        {
+          "region": "surface right",
+          "answer": "CLEAN",
+          "description": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks."
+        },
+        {
+          "region": "surface bottom",
+          "answer": "CLEAN",
+          "description": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks."
+        }
+      ],
+      "raw": {
+        "screw top-left": "I see a gray metal plate with a white plus sign (+) symbol representing a screw head positioned in a circular outline.\nANSWER: SCREW   (a screw head is installed)",
+        "screw top-right": "I see a gray metal plate with a circular icon featuring a plus sign (+) within a black circle.\nANSWER: SCREW   (a screw head is installed)",
+        "screw bottom-left": "I see a gray, circular button with a black plus sign (+) centered within it.\nANSWER: SCREW   (a screw head is installed)",
+        "screw bottom-right": "I see a gray metal plate with a black plus sign (+) symbol representing a screw head installed in a circular hole.\n\nANSWER: SCREW   (a screw head is installed)",
+        "surface top": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks.\nANSWER: CLEAN",
+        "surface left": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks.\nANSWER: CLEAN",
+        "surface center": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks.\nANSWER: CLEAN",
+        "surface right": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks.\nANSWER: CLEAN",
+        "surface bottom": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks.\nANSWER: CLEAN"
+      }
+    },
+    {
+      "image": "missing_screw_01.png",
+      "expected": "REJECT (screw top-right)",
+      "decision": "REJECT",
+      "reason": "missing screw at screw top-right: AI saw \"I see a gray metal plate with a circular, black hole in the center.\"",
+      "decided_by": "ai+rules",
+      "ai_seconds": 26.67,
+      "regions": [
+        {
+          "region": "screw top-left",
+          "answer": "SCREW",
+          "description": "I see a gray metal plate with a white plus sign (+) symbol representing a screw head positioned in a circular outline."
+        },
+        {
+          "region": "screw top-right",
+          "answer": "EMPTY",
+          "description": "I see a gray metal plate with a circular, black hole in the center."
+        }
+      ],
+      "raw": {
+        "screw top-left": "I see a gray metal plate with a white plus sign (+) symbol representing a screw head positioned in a circular outline.\nANSWER: SCREW   (a screw head is installed)",
+        "screw top-right": "I see a gray metal plate with a circular, black hole in the center.\nANSWER: EMPTY"
+      }
+    }
+  ],
+  "calls": [
+    {
+      "image": "crack_01.png",
+      "region": "screw top-left",
+      "s": 138.21,
+      "raw": "I see a gray metal plate with a white plus sign (+) symbol representing a screw head installed in a circular hole.\n\nANSWER: SCREW   (a screw head is installed)"
+    },
+    {
+      "image": "crack_01.png",
+      "region": "screw top-right",
+      "s": 238.46,
+      "raw": "I see a gray metal plate with a black plus sign (+) symbol representing a screw head positioned in a circular recess.\n\nANSWER: SCREW   (a screw head is installed)"
+    },
+    {
+      "image": "crack_01.png",
+      "region": "screw bottom-left",
+      "s": 224.53,
+      "raw": "I see a gray, circular button with a black plus sign (+) inside, likely representing a screw hole.\nANSWER: SCREW   (a screw head is installed)"
+    },
+    {
+      "image": "crack_01.png",
+      "region": "screw bottom-right",
+      "s": 183.18,
+      "raw": "I see a gray metal plate with a black plus sign (+) symbol representing a screw head installed in a circular hole.\n\nANSWER: SCREW   (a screw head is installed)"
+    },
+    {
+      "image": "crack_01.png",
+      "region": "surface top",
+      "s": 146.43,
+      "raw": "The metal plate surface exhibits several fine lines and scratches, indicating wear and use on a manufacturing line.\nANSWER: DAMAGED"
+    },
+    {
+      "image": "good_01.png",
+      "region": "screw top-left",
+      "s": 12.86,
+      "raw": "I see a gray metal plate with a white plus sign (+) symbol representing a screw head positioned in a circular outline.\nANSWER: SCREW   (a screw head is installed)"
+    },
+    {
+      "image": "good_01.png",
+      "region": "screw top-right",
+      "s": 12.42,
+      "raw": "I see a gray metal plate with a circular icon featuring a plus sign (+) within a black circle.\nANSWER: SCREW   (a screw head is installed)"
+    },
+    {
+      "image": "good_01.png",
+      "region": "screw bottom-left",
+      "s": 19.89,
+      "raw": "I see a gray, circular button with a black plus sign (+) centered within it.\nANSWER: SCREW   (a screw head is installed)"
+    },
+    {
+      "image": "good_01.png",
+      "region": "screw bottom-right",
+      "s": 15.65,
+      "raw": "I see a gray metal plate with a black plus sign (+) symbol representing a screw head installed in a circular hole.\n\nANSWER: SCREW   (a screw head is installed)"
+    },
+    {
+      "image": "good_01.png",
+      "region": "surface top",
+      "s": 148.96,
+      "raw": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks.\nANSWER: CLEAN"
+    },
+    {
+      "image": "good_01.png",
+      "region": "surface left",
+      "s": 201.86,
+      "raw": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks.\nANSWER: CLEAN"
+    },
+    {
+      "image": "good_01.png",
+      "region": "surface center",
+      "s": 211.39,
+      "raw": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks.\nANSWER: CLEAN"
+    },
+    {
+      "image": "good_01.png",
+      "region": "surface right",
+      "s": 14.22,
+      "raw": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks.\nANSWER: CLEAN"
+    },
+    {
+      "image": "good_01.png",
+      "region": "surface bottom",
+      "s": 20.36,
+      "raw": "The metal plate surface appears smooth and uniform with no visible lines, cracks, scratches, or marks.\nANSWER: CLEAN"
+    },
+    {
+      "image": "missing_screw_01.png",
+      "region": "screw top-left",
+      "s": 14.87,
+      "raw": "I see a gray metal plate with a white plus sign (+) symbol representing a screw head positioned in a circular outline.\nANSWER: SCREW   (a screw head is installed)"
+    },
+    {
+      "image": "missing_screw_01.png",
+      "region": "screw top-right",
+      "s": 11.8,
+      "raw": "I see a gray metal plate with a circular, black hole in the center.\nANSWER: EMPTY"
+    }
+  ]
+}
